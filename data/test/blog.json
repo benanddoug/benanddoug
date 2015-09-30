@@ -1,12 +1,12 @@
 {
   "name" : "test",
-  "title" : "testing title,
+  "title" : "testing title",
   "date" : "30th September 2015",
   "author" : "Ben Williams",
   "content" : "index.html",
   "blurb" : "short.html",
   "order" : "1",
   "tags" : [
-    "css"
+    "test"
   ]
 }
