@@ -1,11 +1,10 @@
+
+<img class="hero-image" ng-src="{{'data/' + currentPost.name + '/' + currentPost.image}}">
 <div class="blog-post">
 
     <a href="#/"><div class="blog-back-button ">Back to all posts</div></a>
 
-
     <div class="blog-container">
-
-
         <div class="blog-container__header">
             <div class="row">
                 <div class="col-md-12">
@@ -19,11 +18,9 @@
         <div class="blog-content" data-ng-include src="'data/' + currentPost.name + '/' + currentPost.content"></div>
     </div>
 
-
-<div class="my-40">
-
-    <a href="#/"><div class="blog-back-button ">Back to all posts</div></a>
-</div>
+    <div class="back-bottom">
+        <a href="#/"><div class="blog-back-button ">Back to all posts</div></a>
+    </div>
 
 
 </div>

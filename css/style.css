@@ -6,8 +6,12 @@
 
 /* Page */
 body {
-    background-color: #f1eff1;
+    background-color: #fff;
 
+}
+
+main {
+    min-height: 90vh;
 }
 
 .box {
@@ -34,14 +38,12 @@ h2 {
 .blog-container {
     background-color: #fff;
     margin-top: 40px;
-    -webkit-box-shadow: 4px 4px 0 0 rgba(50, 50, 50, 0.4);
-    -moz-box-shadow: 4px 4px 0 0 rgba(50, 50, 50, 0.4);
-    box-shadow: 4px 4px 0 0 rgba(50, 50, 50, 0.4);
-}
+
+
 }
 
 .blog-container__header {
-    padding: 20px 20px 0 20px;
+    padding: 10px 20px 0 0;
 }
 
 
@@ -51,14 +53,11 @@ h2 {
     padding: 0 0 10px 0;
     line-height: 1.3;
 }
-.blog-container__header {
-    padding-left: 20px;
-    padding-top: 10px;
-}
+
 
 
 .blog-container__header a:hover {
-    color: #3b868e;
+    color: #165072;
     text-decoration: none;
 }
 
@@ -69,11 +68,10 @@ h2 {
     color: #999;
     padding-top: 15px;
     margin-bottom: 20px;
-    padding-left: 20px;
 }
 
 .blog-content {
-    padding: 10px 20px 0 20px;
+    padding: 10px 20px 0 0;
 }
 
 .blog-post .blog-content {
@@ -81,8 +79,20 @@ h2 {
 }
 
 .blog-read-more {
-    padding: 20px;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
 }
+.blog-read-more:hover {
+    background-color: #ddd;
+}
+.blog-read-more:hover a {
+    text-decoration: none;
+    color: #165072;
+}
+
 
 .blog-tags {
     font-weight: 400;
@@ -91,15 +101,13 @@ h2 {
 }
 
 .blog-back-button{
-    background-color: #45b7bf;
-    color: #fff;
-    padding: 10px;
+    color: #165072;
+    padding: 10px 10px 5px 10px;
     display: inline-block;
-    border-bottom: 4px solid #3b868e;
+    border-bottom: 2px solid #fff;
 }
 .blog-back-button:hover {
-    margin-top: 2px;
-    border-bottom: 2px solid #3b868e;
+    border-bottom: 2px solid #1a6993;
 }
 
 .blog-back-button a {
@@ -107,7 +115,7 @@ h2 {
 }
 
 .blog-back-button a:hover {
-    color: #45b7bf;
+    color: #1a6993;
     text-decoration: none;
 }
 
@@ -119,14 +127,19 @@ h2 {
 /* Site-wide styles */
 
 .footer {
-    background-color: #454545;
+    background-color: #165072;
     color: #e5e5e5;
     padding: 60px 0 100px 0;
     margin-top: 60px;
 }
 
+.footer a,
+.footer a:hover {
+    color: #fff;
+}
+
 .header {
-    background-color: #454545;
+    background-color: #165072;
     color: #e5e5e5;
     padding: 10px 0;
     margin-bottom: 0;
@@ -166,4 +179,13 @@ h2 {
     background-color: #fff;
     display: block;
     margin: 40px;
+}
+
+.back-bottom {
+    margin: 80px 0 40px 0;
+}
+
+.hero-image {
+    max-width: 100%;
+
 }

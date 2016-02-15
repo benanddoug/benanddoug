@@ -4,7 +4,7 @@ var blogApp = angular.module('blogApp', [
     'ngRoute'
 ]);
 
-blogApp.config(function($routeProvider, $locationProvider) {
+blogApp.config(function($routeProvider) {
 
     $routeProvider.
         when('/', {
@@ -23,7 +23,7 @@ blogApp.config(function($routeProvider, $locationProvider) {
 
 
 //Controller
-blogApp.controller('appCtrl', function($scope, $rootScope, $routeParams, blogService) {
+blogApp.controller('appCtrl', function($scope, $rootScope) {
 
     $scope.currentYear = new Date().getFullYear();
     $rootScope.finishedLoading = false;
@@ -32,14 +32,9 @@ blogApp.controller('appCtrl', function($scope, $rootScope, $routeParams, blogSer
 
 blogApp.controller('indexCtrl', function($scope, $rootScope, $routeParams, blogService) {
 
-     //show loading spinner until not loading
-
-
     //init
     $scope.index = []; //array that will contain the location of all the files we need
     $scope.posts = []; //array that will be filled by the blogService
-
-
     $scope.blogOrderOption = "order";
 
     // retrieve the data from the service
@@ -52,7 +47,6 @@ blogApp.controller('indexCtrl', function($scope, $rootScope, $routeParams, blogS
                 for(var i = 0; i < $scope.index.posts.length; i++){ //for each item in the index
                     blogService.getData($scope.index.posts[i]).then( //call the getData service
                         function(data){
-
                             $scope.posts.push({
                                 "title" : data.title,
                                 "dateCreated" : data.date,
@@ -61,18 +55,16 @@ blogApp.controller('indexCtrl', function($scope, $rootScope, $routeParams, blogS
                                 "content" : data.content,
                                 "tags" : data.tags,
                                 "blurb" : data.blurb,
-                                "order" : data.order
+                                "order" : data.order,
+                                "image" : data.image
                             });
-
                         },
                         function(err){
-                            console.log("error getting file with id: " + i);
+                            console.log("error: " + err);
                         }
                     )
                 }
-
                 $rootScope.finishedLoading = true; //we have finished loading
-
             },
             function() {
                 console.log("error getting index file");
@@ -98,18 +90,12 @@ blogApp.controller('indexCtrl', function($scope, $rootScope, $routeParams, blogS
 });
 
 blogApp.controller('blogPostCtrl', function($scope, $rootScope, $routeParams, blogService) {
-
-    
     $scope.currentPost = "";
-
     $scope.postId = $routeParams.postId;
-
-
 
     function getCurrentPost() {
 
         var post = $routeParams.postId;
-
 
         blogService.getData(post).then( //call the getData service
             function (data) {
